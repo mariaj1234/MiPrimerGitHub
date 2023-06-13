@@ -20,5 +20,5 @@ def consulta():
     print("consulta:", consulta)
     cursor.execute(consulta)
     df = pd.read_sql_query(consulta, db)
-    print("df.dead(21)=",df.head(21))
+    print("df.dead(11)=",df.head(11))
 

@@ -1,0 +1,11 @@
+# diferencia entre sort y sorted
+# sorted devuelve la lista original ordenada crenado un avariable en return dicha variable es el valor de la nueva lista
+#en sort te modifica la propia lista
+
+lista=[1,2,8,9,7,5,4,3]
+
+lista.sort()
+print(lista)
+
+x= sorted(lista)
+print(x)

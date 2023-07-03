@@ -1,0 +1,33 @@
+#Operaciones con conjuntos en Python:
+a = {1, 2, 3, 4}
+b = {3, 4, 5, 6}
+#-Unión: se puede hacer de dos maneras: 
+#      1. a.union(b) 
+#     2. a | b
+#-Intersección: se puede hacer de dos maneras: 
+#       1. a.intersection(b)
+#       2. a & b
+#-Diferencia (los elementos de a que no están en b): se puede hacer de dos maneras: 
+#       1. a.difference(b) 
+#       2. a - b
+
+
+#-Actualización: objeto_conjunto1.update(objeto_conjunto2): actualiza el objeto_conjunto1 con los elementos del objeto_conjunto2
+
+
+def union (a,b):
+    return a.union(b)
+
+print('union:', union(a, b))
+
+def interseccion (a,b):
+    return a.intersection(b)
+
+print('intersección:', interseccion(a, b))
+
+def diferencia (a,b):
+    return a.difference(b) 
+
+print('diferencia:', diferencia (a,b))
+
+

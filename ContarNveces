@@ -1,0 +1,23 @@
+
+def contar_palabras_mayor_n(texto, n):
+    palabras = texto.split()
+    contador = sum(1 for palabra in palabras if len(palabra) > n)
+    return contador
+
+texto = input("Ingresa un texto: ")
+numero = int(input("Ingresa un número: "))
+cantidad_palabras = contar_palabras_mayor_n(texto, numero)
+print(f"La cantidad de palabras con longitud mayor a {numero} es: {cantidad_palabras}")
+
+#función que parametrice el numero que quiera
+
+
+def contar_palabras_mayor_n(texto, n):
+    palabras = texto.split()
+    contador = sum(1 for palabra in palabras if len(palabra) > n)
+    return contador
+
+texto = input("Ingresa un texto: ")
+numero = int(input("Ingresa un número: "))
+cantidad_palabras = contar_palabras_mayor_n(texto, numero)
+print("La cantidad de palabras con longitud mayor a", numero, "es:", cantidad_palabras)

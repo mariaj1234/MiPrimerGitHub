@@ -1,0 +1,24 @@
+
+c = set(range(1, 11))#utiliza range para crear una lista, en vez de inventar tÃº una lista
+
+lista = [1,2,1,5,2,4]
+
+c = set(lista)
+c.add('a')
+c.discard(1)# para descartar algÃºn nÃºmero
+c.remove(1) #para volver algÃºn nÃºmero a la lista
+c.clear(1) # para eliminar todos los elemtos de un conjunto
+c.pop() # para que retorne un elemento aleatorio del conjunto.
+
+c= list(set([1,2,1,5,2,4]))
+print(c)
+
+#si creamos dos objetos de tipo conjunto(variables) 
+
+c1= set()
+c2 = set()
+
+c1.intersection(c2)
+
+
+

@@ -1,0 +1,5 @@
+#Codigo python para colocar una cadena de caracteres con resultado de 50% de probabilidades con upper y lover:
+
+cadena1 = "Hola Julio Cesar"
+resultado = cadena1[:len(cadena1)//2].upper() + cadena1[len(cadena1)//2:].lower()
+print(resultado)

@@ -1,0 +1,32 @@
+#XPath en Python. Obtener el nombre de todos los empleados:
+
+from lxml import etree
+
+def leer_fichero(xml_file):
+   
+    # Cargar el archivo XML
+    xml_tree = etree.parse(xml_file)
+    print(xml_tree)
+    empleados = xml_tree.xpath("//empleado")
+   
+    #libros = xml_tree.xpath("//empleado[anio > 1980]/titulo")
+    #libros = xml_tree.xpath("//empleado[titulo and anio]")
+
+    #empleados = xml_tree.xpath("//empleado[fecha_nac = max(//empleado/fecha_nac)]/titulo")
+    print(empleados)
+    for empleado in empleados:
+        print(type(empleado))
+        nombre = empleado.find("nombre").text
+        fecha_nac = empleado.find("fecha_nac").text
+        print("Nombre:", nombre)
+        print("fecha_nac:", fecha_nac)
+        print("---")
+        len(empleado)
+    print(len(empleado))
+
+# Ruta al archivo XML y DTD
+xml_file = "empleados.xml"
+
+
+# Llamar a la función para validar el XML con el DTD
+leer_fichero(xml_file)

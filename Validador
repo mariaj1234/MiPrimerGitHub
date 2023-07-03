@@ -1,0 +1,28 @@
+#Codigo para validar fichero xml contra un DTD en Python:
+
+from lxml import etree
+
+def validar_xml_con_dtd(xml_file, dtd_file):
+    try:
+        # Cargar el archivo XML y el DTD
+        xml_tree = etree.parse(xml_file)
+        dtd = etree.DTD(open(dtd_file))
+
+        # Validar el archivo XML contra el DTD
+        if dtd.validate(xml_tree):
+            print("El archivo XML es valido según el DTD.")
+        else:
+            print("El archivo XML no es valido según el DTD.")
+            print(dtd.error_log.filter_from_errors()[0])
+
+    except IOError:
+        print("Error al leer los archivos XML o DTD.")
+    except etree.XMLSyntaxError as e:
+        print("Error de sintaxis XML:", str(e))
+
+# Ruta al archivo XML y DTD
+xml_file = "archivo.xml"
+dtd_file = "archivo.dtd"
+
+# Llamar a la funciÃ³n para validar el XML con el DTD
+validar_xml_con_dtd(xml_file, dtd_file)

@@ -1,0 +1,10 @@
+#Map
+def f(s):
+    return s[::-1]
+
+
+lista = ['paco','manolo', 'pepe']
+
+x = list(map(f, lista[::-1]))
+
+print(x)

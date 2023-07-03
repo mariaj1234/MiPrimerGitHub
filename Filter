@@ -1,0 +1,11 @@
+#filter
+letra_objetivo = 'a'
+
+palabras = ['casa', 'perro', 'gato', 'auto', 'manzana']
+
+
+resultado_filter = list(filter(lambda palabra: letra_objetivo in palabra, palabras))
+
+print(resultado_filter) 
+
+ 

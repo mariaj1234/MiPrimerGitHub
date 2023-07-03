@@ -1,0 +1,19 @@
+# # x,y = max_min(lista) 
+lista =[8,24,1,7]
+
+
+def encontrar_maximo(lista):
+    maximo = max(lista)
+    return maximo
+
+def encontrar_minimo(lista):
+    minimo = min(lista)
+    return minimo
+
+# Ejemplo de uso
+
+maximo = encontrar_maximo(lista)
+minimo = encontrar_minimo(lista)
+
+print("Máximo:", maximo)
+print("Mínimo:", minimo)

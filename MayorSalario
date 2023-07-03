@@ -1,0 +1,33 @@
+#Nombre del empleado con el mayor salario, con la funcion max.
+
+from lxml import etree
+
+def leer_fichero(xml_file):
+    # Cargar el archivo XML
+    xml_tree = etree.parse(xml_file)
+    empleados = xml_tree.xpath("//empleado")
+    
+    max_salario = max(empleados, key=lambda empleado: float(empleado.find('salario').text))
+    nombre_max_salario = max_salario.find("nombre").text
+    
+   
+    
+    
+    print("Empleado con el mayor salario:", nombre_max_salario)
+
+# Ruta al archivo XML y DTD
+xml_file = "empleados.xml"
+
+# Llamar a la función para leer el archivo XML
+leer_fichero(xml_file)
+
+# Parsear el archivo XML
+documento = etree.parse("empleados.xml")
+
+# Obtener todos los salarios como una lista de números
+salarios = [float(salario.text) for salario in documento.xpath("//empleado/salario")]
+
+print("salarios=", salarios)
+# Obtener el salario máximo
+salario_maximo = max(salarios)
+print("salario_maximo=", salario_maximo)

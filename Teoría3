@@ -1,0 +1,48 @@
+# función que se llame total(lista)la suma de todos los elementos de la lista, siempre que sean numeros, enteros y flotantes.
+
+lista =[8,24,1,7]
+
+def total(lista):
+    suma = sum(lista)
+    return suma
+
+x = total(lista)
+
+print("Suma total:", x)
+
+#funcion que se llame promedio
+
+
+def promedio(lista):
+  
+    return total(lista)/len(lista)
+
+resultado = promedio(lista)
+
+print("Promedio:", resultado)
+
+
+#estadistica
+
+import statistics
+
+d = statistics.stdev(lista)
+print(d)
+
+#Super funcion donde tenga el mínimo, el máximo, la suma, el promedio y la desviación tipica
+
+
+def super_funcion(lista):
+    minimo = min(lista)
+    maximo = max(lista)
+    suma = sum(lista)
+    promedio = suma / len(lista)
+    desviacion_tipica = statistics.stdev(lista)
+    return minimo, maximo, suma, promedio, desviacion_tipica
+
+minimo, maximo, suma, promedio, desviacion_tipica = super_funcion(lista)
+h = super_funcion(lista)
+
+print(h)
+
+

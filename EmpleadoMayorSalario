@@ -1,0 +1,21 @@
+#XPath en Python.
+#Obtener el nombre y salario del empleado con el salario mÃ¡ximo de la empresa:from lxml import etree
+from lxml import etree
+# Parsear el archivo XML
+documento = etree.parse("empleados.xml")
+
+# Obtener todos los salarios como una lista de nÃºmeros
+salarios = [int(salario.text) for salario in documento.xpath("//empleado/salario")]
+
+print("salarios=", salarios)
+# Obtener el salario mÃ¡ximo
+salario_maximo = max(salarios)
+print("salario_maximo=", salario_maximo)
+
+# Encontrar el empleado con el salario mÃ¡ximo
+empleado_maximo = documento.xpath(f"//empleado[salario='{salario_maximo}']")[0]
+
+# Obtener el nombre del empleado con el salario mÃ¡ximo
+nombre_empleado_maximo = empleado_maximo.xpath("nombre")[0].text
+
+print(nombre_empleado_maximo)

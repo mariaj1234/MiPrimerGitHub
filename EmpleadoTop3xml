@@ -1,0 +1,22 @@
+# encontrar el top3 de empleados, con salario más alto
+from lxml import etree
+
+def leer_fichero(xml_file):
+    # Cargar el archivo XML
+    xml_tree = etree.parse(xml_file)
+    empleados = xml_tree.xpath("//empleado")
+    
+    top_empleados = sorted(empleados, key=lambda empleado: float(empleado.find('salario').text), reverse=True)[:3]
+    
+    for empleado in top_empleados:
+        nombre = empleado.find("nombre").text
+        salario = float(empleado.find("salario").text)
+        print("Nombre:", nombre)
+        print("Salario:", salario)
+        print("---")
+
+# Ruta al archivo XML y DTD
+xml_file = "empleados.xml"
+
+# Llamar a la función para leer el archivo XML
+leer_fichero(xml_file)

@@ -1,0 +1,33 @@
+#XPath en Python.
+#Obtener el nombre de los empleados que cobren más de 3000€.
+
+from lxml import etree
+
+def leer_fichero(xml_file):
+   
+    # Cargar el archivo XML
+    xml_tree = etree.parse(xml_file)
+    #print(xml_tree)
+    empleados = xml_tree.xpath("//empleado")
+   
+    #libros = xml_tree.xpath("//empleado[anio > 1980]/titulo")
+    #libros = xml_tree.xpath("//empleado[titulo and anio]")
+
+    #empleados = xml_tree.xpath("//empleado[fecha_nac = max(//empleado/fecha_nac)]/titulo")
+    empleados = xml_tree.xpath("//empleado[salario > 3000]/nombre")
+   
+    #print(empleados)
+    for empleado in empleados:
+        print(empleado.text)
+        #nombre = empleado.find("nombre")
+        #fecha_nac = empleado.find("fecha_nac").text
+        #print("Nombre:", nombre)
+        #print("fecha_nac:", fecha_nac)
+        #print("---")
+
+# Ruta al archivo XML y DTD
+xml_file = "empleados.xml"
+
+
+# Llamar a la función para validar el XML con el DTD
+leer_fichero(xml_file)

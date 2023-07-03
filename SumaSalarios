@@ -1,0 +1,37 @@
+# obten la suma total de todos salarios 
+
+from lxml import etree
+
+def leer_fichero(xml_file):
+    # Cargar el archivo XML
+    xml_tree = etree.parse(xml_file)
+    empleados = xml_tree.xpath("//empleado[salario > 3000]/nombre")
+
+    for nombre in empleados:
+        print("Nombre:", nombre.text)
+
+    salarios = xml_tree.xpath("//empleado/salario")
+    suma_salarios = sum(float(salario.text) for salario in salarios)
+    print("Suma total de salarios:", suma_salarios)
+
+# Ruta al archivo XML y DTD
+xml_file = "empleados.xml"
+
+# Llamar a la función para leer el archivo XML
+leer_fichero(xml_file)
+
+
+
+def leer_fichero(xml_file):
+   
+    # Cargar el archivo XML
+    xml_tree = etree.parse(xml_file)
+    salarios = xml_tree.xpath("sum(//empleado/salario)")
+    print(salarios)
+
+    
+# Ruta al archivo XML y DTD
+xml_file = "empleados.xml"
+
+# Llamar a la función para validar el XML con el DTD
+leer_fichero(xml_file)
